@@ -1,0 +1,95 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "首页",
+				"navigationBarTextStyle": "white"
+
+			}
+
+		}, {
+			"path": "pages/subject/subject",
+			"style": {
+				"navigationBarTitleText": "专业",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/college/college",
+			"style": {
+				"navigationBarTitleText": "大学院",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mechanism/mechanism",
+			"style": {
+				"navigationBarTitleText": "培训机构",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/HM-search/HM-search",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"app-plus": {
+					"softinputNavBar": "none"
+				}
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "日查查",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"iconWidth": "22px",
+		"color": "#CBCBCC",
+		"selectedColor": "#02D4D3",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"fontSize": "14px",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/resources/tabbar/home1.png",
+			"selectedIconPath": "static/resources/tabbar/home2.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/subject/subject",
+			"iconPath": "static/resources/tabbar/subject1.png",
+			"selectedIconPath": "static/resources/tabbar/subject2.png",
+			"text": "专业"
+		}, {
+			"pagePath": "pages/college/college",
+			"iconPath": "static/resources/tabbar/university1.png",
+			"selectedIconPath": "static/resources/tabbar/university2.png",
+			"text": "大学院"
+		}, {
+			"pagePath": "pages/mechanism/mechanism",
+			"iconPath": "static/resources/tabbar/system1.png",
+			"selectedIconPath": "static/resources/tabbar/system2.png",
+			"text": "培训机构"
+		}, {
+			"pagePath": "pages/mine/mine",
+			"iconPath": "static/resources/tabbar/my1.png",
+			"selectedIconPath": "static/resources/tabbar/my2.png",
+			"text": "我的"
+		}]
+	}
+}
