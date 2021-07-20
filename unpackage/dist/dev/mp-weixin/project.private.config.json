@@ -23,6 +23,18 @@
           "pathName": "pages/college/college",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/college/college",
+          "pathName": "pages/college/college",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mechanism/mechanism",
+          "pathName": "pages/mechanism/mechanism",
+          "query": "",
+          "scene": null
         }
       ]
     }

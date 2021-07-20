@@ -1,5 +1,12 @@
 {
   "navigationBarTitleText": "培训机构",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-cell-group": "/node-modules/uview-ui/components/u-cell-group/u-cell-group",
+    "u-cell-item": "/node-modules/uview-ui/components/u-cell-item/u-cell-item",
+    "u-loadmore": "/node-modules/uview-ui/components/u-loadmore/u-loadmore",
+    "u-back-top": "/node-modules/uview-ui/components/u-back-top/u-back-top",
+    "search-swiper": "/components/search-swiper/search-swiper"
+  }
 }

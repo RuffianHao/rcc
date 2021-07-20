@@ -33,7 +33,8 @@
 			"path": "pages/mechanism/mechanism",
 			"style": {
 				"navigationBarTitleText": "培训机构",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
 			}
 
 		}, {

@@ -1,11 +1,7 @@
 <template>
 	<view class="index-container container">
 		<!-- 头部区域 -->
-		<view class="top-wrap">
-			<u-swiper  height="480" :list="swiperList"></u-swiper>
-			<u-search :style="[searchStyle]" :show-action="false" class="search flex-item" :value="search_value"
-				@focus="handleFocus" placeholderColor="输入关键词"></u-search>
-		</view>
+		<SearchSwiper :list="swiperList" height="480" @click="handleClick"></SearchSwiper>
 		<!-- 图标导航 -->
 		<view class="icon-wrap">
 			<u-grid :col="4" :border="false">
@@ -21,6 +17,7 @@
 				:bar-style="{backgroundColor:'#02D4D3',height:'4rpx'}" name="cate_name" count="cate_count"
 				:list="tabsList" :is-scroll="false" :current="tabsCurrent" @change="tabsChange">
 			</u-tabs>
+			<!-- 大学热搜榜 -->
 			<view class="scroll-box" v-if="tabsCurrent==0">
 				<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="0">
 					<view v-for="(item,index) in topCollegeSearchesList" :key="index"
@@ -40,8 +37,9 @@
 			</view>
 		</view>
 		<!--  特色专业 -->
-		<u-card :show-foot="false"  class="features-specialty" :title-size="'34rpx'" :head-style="{fontSize:'34rpx',fontWeight:'600'}"
-			:head-border-bottom="false" margin="20rpx 0 0 0" title="特色专业" :sub-title="subTitle" :thumb="thumb">
+		<u-card :show-foot="false" class="features-specialty" :title-size="'34rpx'"
+			:head-style="{fontSize:'34rpx',fontWeight:'600'}" :head-border-bottom="false" margin="20rpx 0 0 0"
+			title="特色专业" :sub-title="subTitle" :thumb="thumb">
 			<view class="" slot="body">
 				<view class="u-body-item  u-border-bottom u-col-between u-p-t-0">
 					<view class="u-flex">
@@ -72,10 +70,11 @@
 		</u-card>
 		<!-- 大学院主题介绍 -->
 		<view class="college-theme">
-				<view class="title">
-					<view style="font-size: 34rpx;padding: 0 0 20rpx 20rpx;font-weight: 600;">大学院主题介绍</view>
-				</view>
-				<u-swiper :border-radius="16" title effect3d :effect3dPreviousMargin="150"  height="260" :list="swiperList"></u-swiper>
+			<view class="title">
+				<view style="font-size: 34rpx;padding: 0 0 20rpx 20rpx;font-weight: 600;">大学院主题介绍</view>
+			</view>
+			<u-swiper :border-radius="16" title effect3d :effect3dPreviousMargin="150" height="260" :list="swiperList">
+			</u-swiper>
 		</view>
 		<view class="end-wrap">
 			<text>-下面没有内容了-</text>
@@ -85,8 +84,10 @@
 </template>
 
 <script>
+	import SearchSwiper from '@/components/search-swiper/search-swiper.vue'
 	export default {
 		components: {
+			SearchSwiper
 		},
 		data() {
 			return {
@@ -97,12 +98,6 @@
 					cate_name: '专业热搜榜'
 				}],
 				tabsCurrent: 0,
-				search_value: '',
-				searchStyle: {
-					top: '20px',
-					width: '100%',
-					padding: '0 20px'
-				},
 				iconList: [{
 						src: '/static/resources/index/icon1.png',
 						title: '攻略库'
@@ -116,7 +111,7 @@
 					},
 					{
 						src: '/static/resources/index/icon4.png',
-						title: '招生信息' 
+						title: '招生信息'
 					}
 				],
 				swiperList: [{
@@ -133,57 +128,41 @@
 					}
 				],
 				topCollegeSearchesList: [{
-						src: '',
+						src: '/static/resources/banner/schllo.png',
 						cn_name: '东大',
 						en_name: 'Dongda'
 					},
 					{
-						src: '',
+						src: '/static/resources/banner/schllo.png',
 						cn_name: '东大',
 						en_name: 'Dongda'
 					},
 					{
-						src: '',
+						src: '/static/resources/banner/schllo.png',
 						cn_name: '东大',
 						en_name: 'Dongda'
 					},
 					{
-						src: '',
+						src: '/static/resources/banner/schllo.png',
 						cn_name: '东大',
 						en_name: 'Dongda'
 					},
 					{
-						src: '',
+						src: '/static/resources/banner/schllo.png',
 						cn_name: '东大',
 						en_name: 'Dongda'
 					},
 					{
-						src: '',
+						src: '/static/resources/banner/schllo.png',
 						cn_name: '东大',
 						en_name: 'Dongda'
 					},
 				]
 			};
 		},
-		onLoad() {
-			var self = this;
-			// 如果在微信小程序： 获取胶囊信息-重新设置input样式
-			//#ifdef MP-WEIXIN 
-			const res = uni.getSystemInfoSync();
-			self.windowWidth = res.windowWidth;
-			const menuButtonInfo = uni.getMenuButtonBoundingClientRect();
-			self.searchStyle = {
-				right: `${res.windowWidth - menuButtonInfo.left}px`,
-				left: 0,
-				top: `${menuButtonInfo.top}px`,
-				lineHeight: `${menuButtonInfo.height}px`,
-				width: 'auto',
-				padding: '0 20px'
-			};
-			//#endif
-		},
+		onLoad() {},
 		methods: {
-			handleFocus() {
+			handleClick() {
 				this.$u.route('/pages/HM-search/HM-search')
 			},
 			//tabs 切换

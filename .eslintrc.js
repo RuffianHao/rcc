@@ -5,7 +5,7 @@ module.exports = {
     rules: {
         "no-alert": 0,
         "no-multi-spaces": "error", // 禁止多个空格 
-        "semi": [0 "never"] ,// 自动补充分号
+		 "semi": [0, "never"] ,// 自动补充分号
        "quotes": ["error", "single"] // 使用单引号
     }
 }

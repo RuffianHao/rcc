@@ -6,7 +6,7 @@
 				<mSearch   :inputStyle="{'height':'80rpx','line-height':'80rpx','width':'80%'}" bgColor="#f7f8fa" class="mSearch-input-box" mode="3"  :button="false" placeholder="搜索"
 				 v-model="search_value"> 
 				<view slot="btn">
-					<u-button>高级筛选</u-button>
+					<u-button :ripple="true" type="success" shape="circle">高级筛选</u-button>
 				</view>
 				 </mSearch>
 				
@@ -23,11 +23,11 @@
 			</view>
 		</u-sticky>
 		<u-index-list :scrollTop="scrollTop">
-			<view v-for="(item, index) in abcList" :key="index">
+			<view v-for="(item, index) in collegeList" :key="index">
 				<u-index-anchor :index="item.index" />
-				<!-- <view  v-for="(item2, index2) in item.efgList" :key="index2" class="list-cell"> -->
+				<!-- <view  v-for="(item2, index2) in item.collegeList" :key="index2" class="list-cell"> -->
 
-				<u-cell-group v-for="(item2, index2) in item.efgList" :key="index2">
+				<u-cell-group v-for="(item2, index2) in item.collegeList" :key="index2">
 					<u-cell-item use-label-slot :arrow="false">
 						<view slot="icon"><u-image shape="circle" width="80rpx" height="80rpx" :src="src"></u-image></view>
 						<template slot="title" style="margin-left: 20rpx;">
@@ -51,7 +51,7 @@
 
 		<u-loadmore :icon-type="iconType" :load-text="loadText" :status="status" margin-top="40" margin-bottom="40" />
 
-		<u-back-top top="600" :scroll-top="scrollTop" :custom-style="customStyle"></u-back-top>
+		<u-back-top top="200" :scroll-top="scrollTop" :custom-style="customStyle"></u-back-top>
 	</view>
 </template>
 
@@ -62,7 +62,7 @@ export default {
 	
 	data() {
 		return {
-			search_value: '1',
+			search_value: '',
 			customStyle: {
 				backgroundColor: '#f7f7f7'
 			},
@@ -77,14 +77,18 @@ export default {
 			page: 1,
 			scrollTop: 0,
 			TableTitleList: [{ name: '研究科', prop: 'yjs' }, { name: '专攻', prop: 'yjs' }, { name: '学生', prop: 'yjs' }, { name: '定员', prop: 'yjs' }],
-			abcList: [
+			collegeList: [
 				{
 					index: 'A',
-					efgList: ['A苏打水', 'A谁打', 'A阿萨达']
+					collegeList: ['A苏打水', 'A谁打', 'A阿萨达']
 				},
 				{
 					index: 'B',
-					efgList: ['B爱情', 'B垫付单', 'B刚发的']
+					collegeList: ['B爱情', 'B垫付单', 'B刚发的']
+				},
+				{
+					index: 'C',
+					collegeList: ['C烧烤辣椒', 'C是撒', 'C请问']
 				}
 			],
 			indexList: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
