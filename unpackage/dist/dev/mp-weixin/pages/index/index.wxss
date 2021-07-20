@@ -27,9 +27,6 @@
 .search {
   position: absolute;
 }
-.index-container {
-  /* 底部提示 */
-}
 .index-container .icon-wrap {
   padding: 34rpx 0px 20rpx;
   text-align: center;
@@ -123,15 +120,5 @@
 }
 .index-container .college-theme {
   margin: 20rpx 0;
-}
-.index-container .end-wrap {
-  padding: 20rpx 0px 40rpx;
-  text-align: center;
-  font-size: 12px;
-  line-height: 20px;
-  color: #C9C9C9;
-  letter-spacing: 0;
-  text-align: center;
-  font-weight: 400;
 }
 

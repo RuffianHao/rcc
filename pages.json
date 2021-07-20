@@ -2,6 +2,9 @@
 	"easycom": {
 		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 	},
+	"globalStyle":{
+		"backgroundColor":"#f9f9f9"
+	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 
 		{
@@ -23,8 +26,7 @@
 		}, {
 			"path": "pages/college/college",
 			"style": {
-				"navigationBarTitleText": "大学院",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "大学院"
 			}
 
 		}, {

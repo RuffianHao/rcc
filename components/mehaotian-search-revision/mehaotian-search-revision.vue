@@ -1,6 +1,6 @@
 <template>
 	<view class="serach">
-		<view class="content" :style="{'border-radius':radius+'px'}">
+		<view class="content"  :style="[inputStyle,{'border-radius':radius+'px', 'background': bgColor}]">
 			<!-- HM修改 增加进入输入状态的点击范围 -->
 			<view class="content-box" :class="{'center':mode === 2}" >
 				<text class="icon icon-serach"></text>
@@ -10,13 +10,17 @@
 				<!-- HM修改 @click换成@click.stop阻止冒泡 -->
 				<text v-if="isDelShow" class="icon icon-del"  @click.stop="clear"></text>
 			</view>
-			<view v-show="(active&&show&&button === 'inside')||(isDelShow && button === 'inside')" class="serachBtn" @click="search">
+			<view :style="[btnStyle]" v-show="(mode=='1')||(active&&show&&button === 'inside')||(isDelShow && button === 'inside')" class="serachBtn" @click="search">
 				搜索
 			</view>
 		</view>
 		<view  v-if="button === 'outside'" class="button" :class="{'active':show||active}" @click="search">
 			<view class="button-item">{{!show?searchName:'搜索'}}</view>
 		</view>
+		<!-- <view class="button" v-if="$slots['btn']"> -->
+			<slot name="btn" v-slot="btn"> <view class="button-item"></view></slot>
+		<!-- </view> -->
+		
 	</view>
 </template>
 
@@ -47,6 +51,18 @@ export default {
 		radius: {
 			value: String,
 			default: 60
+		},
+		bgColor: {
+			value: String,
+			default: '#fff'
+		},
+		inputStyle:{
+			value: Object,
+			default: {}
+		},
+		btnStyle:{
+			value: Object,
+			default: {}
 		}
 	},
 	data() {
@@ -145,9 +161,9 @@ export default {
 		display: flex;
 		align-items: center;
 		width: 100%;
-		height: 60upx;
+		// height: 60upx;
 		//border: 1px #ccc solid; //HM修改 去掉边框
-		background: #fff;
+		// background: #fff;
 		overflow: hidden;
 		transition: all 0.2s linear;
 		border-radius: 30px;

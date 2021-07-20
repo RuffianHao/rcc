@@ -2,7 +2,7 @@
 	<view class="index-container container">
 		<!-- 头部区域 -->
 		<view class="top-wrap">
-			<u-swiper height="480" :list="swiperList"></u-swiper>
+			<u-swiper  height="480" :list="swiperList"></u-swiper>
 			<u-search :style="[searchStyle]" :show-action="false" class="search flex-item" :value="search_value"
 				@focus="handleFocus" placeholderColor="输入关键词"></u-search>
 		</view>
@@ -72,8 +72,10 @@
 		</u-card>
 		<!-- 大学院主题介绍 -->
 		<view class="college-theme">
-			<ls-swiper imgWidth="95%" :list="swiperList" imgKey="image" :crown="true" :loop="true" :shadow='true' height='130'
-				previousMargin="127" nextMargin='127' imgRadius="8" />
+				<view class="title">
+					<view style="font-size: 34rpx;padding: 0 0 20rpx 20rpx;font-weight: 600;">大学院主题介绍</view>
+				</view>
+				<u-swiper :border-radius="16" title effect3d :effect3dPreviousMargin="150"  height="260" :list="swiperList"></u-swiper>
 		</view>
 		<view class="end-wrap">
 			<text>-下面没有内容了-</text>
@@ -83,10 +85,8 @@
 </template>
 
 <script>
-	import LsSwiper from '../../components/ls-swiper/index.vue';
 	export default {
 		components: {
-			LsSwiper
 		},
 		data() {
 			return {
@@ -184,9 +184,7 @@
 		},
 		methods: {
 			handleFocus() {
-				uni.navigateTo({
-					url: '/pages/HM-search/HM-search'
-				});
+				this.$u.route('/pages/HM-search/HM-search')
 			},
 			//tabs 切换
 			tabsChange(val) {
@@ -336,16 +334,5 @@
 
 		}
 
-		/* 底部提示 */
-		.end-wrap {
-			padding: 20rpx 0px 40rpx;
-			text-align: center;
-			font-size: 12px;
-			line-height: 20px;
-			color: #C9C9C9;
-			letter-spacing: 0;
-			text-align: center;
-			font-weight: 400;
-		}
 	}
 </style>

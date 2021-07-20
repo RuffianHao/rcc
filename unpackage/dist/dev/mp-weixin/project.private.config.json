@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -14,6 +15,12 @@
         {
           "name": "pages/subject/subject",
           "pathName": "pages/subject/subject",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "大学院",
+          "pathName": "pages/college/college",
           "query": "",
           "scene": null
         }

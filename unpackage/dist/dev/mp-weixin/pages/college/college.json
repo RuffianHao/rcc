@@ -1,5 +1,15 @@
 {
   "navigationBarTitleText": "大学院",
-  "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "u-sticky": "/node-modules/uview-ui/components/u-sticky/u-sticky",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
+    "u-cell-group": "/node-modules/uview-ui/components/u-cell-group/u-cell-group",
+    "u-cell-item": "/node-modules/uview-ui/components/u-cell-item/u-cell-item",
+    "u-index-list": "/node-modules/uview-ui/components/u-index-list/u-index-list",
+    "u-index-anchor": "/node-modules/uview-ui/components/u-index-anchor/u-index-anchor",
+    "u-image": "/node-modules/uview-ui/components/u-image/u-image",
+    "u-loadmore": "/node-modules/uview-ui/components/u-loadmore/u-loadmore",
+    "u-back-top": "/node-modules/uview-ui/components/u-back-top/u-back-top",
+    "m-search": "/components/mehaotian-search-revision/mehaotian-search-revision"
+  }
 }
