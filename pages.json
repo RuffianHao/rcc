@@ -2,9 +2,6 @@
 	"easycom": {
 		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 	},
-	"globalStyle":{
-		"backgroundColor":"#f9f9f9"
-	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 
 		{
@@ -58,8 +55,8 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "日查查",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#F9F9F9",
+		"backgroundColor": "#F9F9F9"
 	},
 	"tabBar": {
 		"iconWidth": "22px",

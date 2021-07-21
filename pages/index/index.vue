@@ -79,7 +79,7 @@
 		<view class="end-wrap">
 			<text>-下面没有内容了-</text>
 		</view>
-
+<u-tabbar v-model="current" :list="list" mid-button></u-tabbar>
 	</view>
 </template>
 
@@ -91,6 +91,37 @@
 		},
 		data() {
 			return {
+				list: [{
+						iconPath: "/static/resources/tabbar/home1.png",
+						selectedIconPath: "/static/resources/tabbar/home2.png",
+						text: '首页'
+					},
+					{
+						iconPath: "/static/resources/tabbar/subject1.png",
+						selectedIconPath: "/static/resources/tabbar/subject2.png",
+						text: '专业'
+					},
+					{
+						iconPath: "/static/resources/tabbar/daxue.png",
+						selectedIconPath: "/static/resources/tabbar/daxue.png",
+						text: '大学院', 
+						midButton: true
+					},
+					{
+						iconPath: "/static/resources/tabbar/system1.png",
+						selectedIconPath: "/static/resources/tabbar/system2.png",
+						text: '培训机构'
+					},
+					{
+						iconPath: "/static/resources/tabbar/my1.png",
+						selectedIconPath: "/static/resources/tabbar/my2.png",
+						text: '我的',
+						count: 23,
+						isDot: false,
+						customIcon: false,
+					},
+				],
+				current: 0,
 				scrollTop: 0,
 				tabsList: [{
 					cate_name: '大学热搜榜'

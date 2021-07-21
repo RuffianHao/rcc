@@ -11,8 +11,8 @@
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "日查查",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarBackgroundColor": "#F9F9F9",
+    "backgroundColor": "#F9F9F9"
   },
   "tabBar": {
     "iconWidth": "22px",
@@ -55,6 +55,5 @@
     ]
   },
   "permission": {},
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

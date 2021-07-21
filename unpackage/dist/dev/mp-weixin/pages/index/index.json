@@ -10,6 +10,7 @@
     "u-card": "/node-modules/uview-ui/components/u-card/u-card",
     "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
     "u-swiper": "/node-modules/uview-ui/components/u-swiper/u-swiper",
+    "u-tabbar": "/node-modules/uview-ui/components/u-tabbar/u-tabbar",
     "search-swiper": "/components/search-swiper/search-swiper"
   }
 }
