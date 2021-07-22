@@ -41,7 +41,7 @@
   font-weight: 400;
 }
 .index-container .scroll-box {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 30rpx 10rpx 30rpx 30rpx;
   min-height: 344rpx;
 }

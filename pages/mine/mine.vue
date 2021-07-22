@@ -1,6 +1,6 @@
 <template>
 	<view>
-		
+		<custom-tabbar :value="4"></custom-tabbar>
 	</view>
 </template>
 

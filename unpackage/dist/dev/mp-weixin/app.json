@@ -15,12 +15,10 @@
     "backgroundColor": "#F9F9F9"
   },
   "tabBar": {
-    "iconWidth": "22px",
     "color": "#CBCBCC",
     "selectedColor": "#02D4D3",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
-    "fontSize": "14px",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -55,5 +53,7 @@
     ]
   },
   "permission": {},
-  "usingComponents": {}
+  "usingComponents": {
+    "custom-tabbar": "/components/tabbar/tabbar"
+  }
 }

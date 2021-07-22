@@ -3,6 +3,7 @@
   "navigationBarTitleText": "首页",
   "navigationBarTextStyle": "white",
   "usingComponents": {
+    "u-notice-bar": "/node-modules/uview-ui/components/u-notice-bar/u-notice-bar",
     "u-grid": "/node-modules/uview-ui/components/u-grid/u-grid",
     "u-grid-item": "/node-modules/uview-ui/components/u-grid-item/u-grid-item",
     "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
@@ -10,7 +11,6 @@
     "u-card": "/node-modules/uview-ui/components/u-card/u-card",
     "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
     "u-swiper": "/node-modules/uview-ui/components/u-swiper/u-swiper",
-    "u-tabbar": "/node-modules/uview-ui/components/u-tabbar/u-tabbar",
     "search-swiper": "/components/search-swiper/search-swiper"
   }
 }

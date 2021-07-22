@@ -67,8 +67,4 @@
   padding: 20px;
   background: #ffffff;
 }
-.mSearch-input-box {
-  background-color: red;
-  background: #000;
-}
 

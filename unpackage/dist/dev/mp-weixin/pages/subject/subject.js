@@ -96,13 +96,13 @@ var components
 try {
   components = {
     uSticky: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-sticky/u-sticky */ "node-modules/uview-ui/components/u-sticky/u-sticky").then(__webpack_require__.bind(null, /*! uview-ui/components/u-sticky/u-sticky.vue */ 141))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-sticky/u-sticky */ "node-modules/uview-ui/components/u-sticky/u-sticky").then(__webpack_require__.bind(null, /*! uview-ui/components/u-sticky/u-sticky.vue */ 148))
     },
     uCellGroup: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-group/u-cell-group */ "node-modules/uview-ui/components/u-cell-group/u-cell-group").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-group/u-cell-group.vue */ 148))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-group/u-cell-group */ "node-modules/uview-ui/components/u-cell-group/u-cell-group").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-group/u-cell-group.vue */ 155))
     },
     uCellItem: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-item/u-cell-item */ "node-modules/uview-ui/components/u-cell-item/u-cell-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-item/u-cell-item.vue */ 155))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-cell-item/u-cell-item */ "node-modules/uview-ui/components/u-cell-item/u-cell-item").then(__webpack_require__.bind(null, /*! uview-ui/components/u-cell-item/u-cell-item.vue */ 162))
     }
   }
 } catch (e) {
@@ -189,10 +189,13 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
 var _default =
+
 {
   data: function data() {
     return {
+      enable: true,
       TableTitleList: [{ name: '专攻', prop: 'number' }, { name: '学院', prop: 'cnumber' }, { name: '学生', prop: 'student' }, { name: '招生', prop: 'dyCount' }],
       SubjectClassList: [
       {
@@ -257,7 +260,13 @@ var _default =
 
 
   },
-  methods: {} };exports.default = _default;
+  methods: {},
+  onShow: function onShow() {
+    this.enable = true;
+  },
+  onHide: function onHide() {
+    this.enable = false;
+  } };exports.default = _default;
 
 /***/ }),
 

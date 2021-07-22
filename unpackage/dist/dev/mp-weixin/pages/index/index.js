@@ -95,6 +95,9 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uNoticeBar: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-notice-bar/u-notice-bar */ "node-modules/uview-ui/components/u-notice-bar/u-notice-bar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-notice-bar/u-notice-bar.vue */ 278))
+    },
     uGrid: function() {
       return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-grid/u-grid */ "node-modules/uview-ui/components/u-grid/u-grid").then(__webpack_require__.bind(null, /*! uview-ui/components/u-grid/u-grid.vue */ 85))
     },
@@ -115,9 +118,6 @@ try {
     },
     uSwiper: function() {
       return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-swiper/u-swiper */ "node-modules/uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper/u-swiper.vue */ 127))
-    },
-    uTabbar: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabbar/u-tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabbar/u-tabbar")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabbar/u-tabbar.vue */ 264))
     }
   }
 } catch (e) {
@@ -141,6 +141,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  if (!_vm._isMounted) {
+    _vm.e0 = function($event) {
+      _vm.noticeBarShow = false
+    }
+  }
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -174,7 +179,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var SearchSwiper = function SearchSwiper() {__webpack_require__.e(/*! require.ensure | components/search-swiper/search-swiper */ "components/search-swiper/search-swiper").then((function () {return resolve(__webpack_require__(/*! @/components/search-swiper/search-swiper.vue */ 134));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var SearchSwiper = function SearchSwiper() {__webpack_require__.e(/*! require.ensure | components/search-swiper/search-swiper */ "components/search-swiper/search-swiper").then((function () {return resolve(__webpack_require__(/*! @/components/search-swiper/search-swiper.vue */ 141));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
 
 
 
@@ -265,49 +274,28 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     SearchSwiper: SearchSwiper },
 
+
   data: function data() {
     return {
-      list: [{
-        iconPath: "/static/resources/tabbar/home1.png",
-        selectedIconPath: "/static/resources/tabbar/home2.png",
-        text: '首页' },
+      noticeList: [
+      '重大通知：此款uniapp+uview制作的小程序即将上线！'],
 
-      {
-        iconPath: "/static/resources/tabbar/subject1.png",
-        selectedIconPath: "/static/resources/tabbar/subject2.png",
-        text: '专业' },
-
-      {
-        iconPath: "/static/resources/tabbar/daxue.png",
-        selectedIconPath: "/static/resources/tabbar/daxue.png",
-        text: '大学院',
-        midButton: true },
-
-      {
-        iconPath: "/static/resources/tabbar/system1.png",
-        selectedIconPath: "/static/resources/tabbar/system2.png",
-        text: '培训机构' },
-
-      {
-        iconPath: "/static/resources/tabbar/my1.png",
-        selectedIconPath: "/static/resources/tabbar/my2.png",
-        text: '我的',
-        count: 23,
-        isDot: false,
-        customIcon: false }],
-
-
-      current: 0,
+      noticeBarShow: true,
       scrollTop: 0,
-      tabsList: [{
+      tabsList: [
+      {
         cate_name: '大学热搜榜' },
+
       {
         cate_name: '专业热搜榜' }],
 
+
       tabsCurrent: 0,
-      iconList: [{
+      iconList: [
+      {
         src: '/static/resources/index/icon1.png',
         title: '攻略库' },
+
       {
         src: '/static/resources/index/icon2.png',
         title: '问答' },
@@ -321,7 +309,8 @@ __webpack_require__.r(__webpack_exports__);
         title: '招生信息' }],
 
 
-      swiperList: [{
+      swiperList: [
+      {
         image: '/static/resources/banner/banner1.png',
         title: '昨夜星辰昨夜风，画楼西畔桂堂东' },
 
@@ -334,7 +323,8 @@ __webpack_require__.r(__webpack_exports__);
         title: '谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳' }],
 
 
-      topCollegeSearchesList: [{
+      topCollegeSearchesList: [
+      {
         src: '/static/resources/banner/schllo.png',
         cn_name: '东大',
         en_name: 'Dongda' },
@@ -367,7 +357,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
   },
-  onLoad: function onLoad() {},
+  onLoad: function onLoad() {
+
+  },
+
   methods: {
     handleClick: function handleClick() {
       this.$u.route('/pages/HM-search/HM-search');

@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 
-		<u-sticky>
+		<u-sticky :enable="enable">
 			<view class="search-box">
 				<mSearch   :inputStyle="{'height':'80rpx','line-height':'80rpx','width':'80%'}" bgColor="#f7f8fa" class="mSearch-input-box" mode="3"  :button="false" placeholder="搜索"
 				 v-model="search_value"> 
@@ -14,7 +14,7 @@
 			<!-- 只能有一个根元素 -->
 			<view class="sticky">
 				<u-cell-group>
-					<u-cell-item :hover-class="false" :arrow="false" title="大学名称" :title-style="{ fontSize: '32rpx' }">
+					<u-cell-item hover-class="none" :arrow="false" title="大学名称" :title-style="{ fontSize: '32rpx' }">
 						<view slot="right-icon" class="cell-content">
 							<view v-for="(item, index) in TableTitleList" :key="index" class="cell-content-item num-cell">{{ item.name }}</view>
 						</view>
@@ -52,6 +52,8 @@
 		<u-loadmore :icon-type="iconType" :load-text="loadText" :status="status" margin-top="40" margin-bottom="40" />
 
 		<u-back-top top="200" :scroll-top="scrollTop" :custom-style="customStyle"></u-back-top>
+		
+		<custom-tabbar :value="2"></custom-tabbar>
 	</view>
 </template>
 
@@ -62,6 +64,7 @@ export default {
 	
 	data() {
 		return {
+			enable:true,
 			search_value: '',
 			customStyle: {
 				backgroundColor: '#f7f7f7'
@@ -103,6 +106,12 @@ export default {
 		setTimeout(() => {
 			this.status = 'nomore';
 		}, 3000);
+	},
+	onLoad() {
+		this.enable = true
+	},
+	onHide() {
+		this.enable = false
 	}
 };
 </script>
@@ -145,7 +154,6 @@ export default {
 	background: #ffffff;
 }
 .mSearch-input-box{
-	background-color: red;
-	background: #000;
+
 }
 </style>
