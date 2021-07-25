@@ -114,7 +114,7 @@ try {
       return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-index-anchor/u-index-anchor */ "node-modules/uview-ui/components/u-index-anchor/u-index-anchor").then(__webpack_require__.bind(null, /*! uview-ui/components/u-index-anchor/u-index-anchor.vue */ 176))
     },
     uImage: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 120))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 106))
     },
     uLoadmore: function() {
       return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-loadmore/u-loadmore */ "node-modules/uview-ui/components/u-loadmore/u-loadmore").then(__webpack_require__.bind(null, /*! uview-ui/components/u-loadmore/u-loadmore.vue */ 183))
