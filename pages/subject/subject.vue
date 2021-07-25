@@ -1,10 +1,10 @@
 <template>
-	<view class="container">
-		<u-sticky>
+	<view class="container u-page">
+		<u-sticky :enable="enable">
 			<!-- 只能有一个根元素 -->
 			<view class="sticky">
 				<u-cell-group>
-					<u-cell-item :hover-class="false" :arrow="false" :title="`类别( ${SubjectClassList.length} )`" :title-style="{ fontSize: '32rpx' }">
+					<u-cell-item hover-class="none" :arrow="false" :title="`类别( ${SubjectClassList.length} )`" :title-style="{ fontSize: '32rpx' }">
 						<view slot="right-icon" class="cell-content">
 							<view v-for="(item, index) in TableTitleList" :key="index" class="cell-content-item num-cell">{{ item.name }}</view>
 						</view>
@@ -25,13 +25,16 @@
 			</u-cell-item>
 		</u-cell-group>
 		<view class="end-wrap"><text>-下面没有内容了-</text></view>
+				<custom-tabbar :value="1"></custom-tabbar>
 	</view>
 </template>
 
 <script>
+
 export default {
 	data() {
 		return {
+			enable:true,
 			TableTitleList: [{ name: '专攻', prop: 'number' }, { name: '学院', prop: 'cnumber' }, { name: '学生', prop: 'student' }, { name: '招生', prop: 'dyCount' }],
 			SubjectClassList: [
 				{
@@ -96,7 +99,13 @@ export default {
 			]
 		};
 	},
-	methods: {}
+	methods: {},
+	onShow() {
+		this.enable=true
+	},
+	onHide() {
+		this.enable=false
+	}
 };
 </script>
 

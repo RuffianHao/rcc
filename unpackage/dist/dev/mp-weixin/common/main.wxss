@@ -3305,9 +3305,13 @@ u-dropdown {
 
 
 /* end-头条小程序编译后页面有组件名的元素，特别处理--end */
+page {
+  background-color: #f9f9f9;
+}
 .container {
   position: relative;
   width: 100%;
+  height: 100%;
   background-color: #f9f9f9;
   overflow: hidden;
   -webkit-box-sizing: border-box;

@@ -1,0 +1,1 @@
+<u-tabbar bind:input="__e" vue-id="d01cb1fc-1" icon-size="{{38}}" mid-button-size="{{68}}" list="{{vuex_tabbarList}}" mid-button="{{true}}" value="{{value}}" data-event-opts="{{[['^input',[['__set_model',['','value','$event',[]]]]]]}}" bind:__l="__l"></u-tabbar>

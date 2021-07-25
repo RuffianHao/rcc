@@ -14,9 +14,13 @@
 
 <style lang="scss">
 	@import "uview-ui/index.scss";
+	page {
+	    background-color: #f9f9f9;
+	}
 	.container {
 	    position: relative;
 	    width: 100%;
+		height: 100%;
 	    background-color: #f9f9f9;
 	    overflow: hidden;
 	    box-sizing: border-box;

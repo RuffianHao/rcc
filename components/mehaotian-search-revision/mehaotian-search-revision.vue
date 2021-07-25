@@ -58,11 +58,13 @@ export default {
 		},
 		inputStyle:{
 			value: Object,
-			default: {}
+			default(){
+				return {}
+			}
 		},
 		btnStyle:{
 			value: Object,
-			default: {}
+			default: undefined
 		}
 	},
 	data() {

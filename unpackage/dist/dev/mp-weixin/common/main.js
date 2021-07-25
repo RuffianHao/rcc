@@ -7,18 +7,42 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ 4);var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+/* WEBPACK VAR INJECTION */(function(createApp) {Object.defineProperty(exports, "__esModule", { value: true });exports.get = get;exports.post = post;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 24));__webpack_require__(/*! uni-pages */ 4);var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 5));
-var _uviewUi = _interopRequireDefault(__webpack_require__(/*! uview-ui */ 11));
+var _store = _interopRequireDefault(__webpack_require__(/*! @/store */ 11));
+var _uviewUi = _interopRequireDefault(__webpack_require__(/*! uview-ui */ 16));
 
 
-__webpack_require__(/*! ./styles/index.scss */ 40);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}_vue.default.use(_uviewUi.default);_vue.default.config.productionTip = false;
+__webpack_require__(/*! ./styles/index.scss */ 45);
 
-_App.default.mpType = 'app';
 
-var app = new _vue.default(_objectSpread({},
-_App.default));
 
+
+
+
+
+
+
+
+
+
+
+
+
+var _httpInterceptor = _interopRequireDefault(__webpack_require__(/*! @/common/http.interceptor.js */ 321));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}_vue.default.use(_uviewUi.default);_vue.default.config.productionTip = false;var vuexStore = __webpack_require__(/*! @/store/$u.mixin.js */ 46);_vue.default.mixin(vuexStore);var CustomTabbar = function CustomTabbar() {__webpack_require__.e(/*! require.ensure | components/tabbar/tabbar */ "components/tabbar/tabbar").then((function () {return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 91));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};_vue.default.component('CustomTabbar', CustomTabbar);_App.default.mpType = 'app';var app = new _vue.default(_objectSpread({ store: _store.default }, _App.default)); // http拦截器，将此部分放在new Vue()和app.$mount()之间，才能App.vue中正常使用
+_vue.default.use(_httpInterceptor.default, app);function
+
+get() {return _get.apply(this, arguments);}function _get() {_get = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var url,data,_args = arguments;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:url = _args.length > 0 && _args[0] !== undefined ? _args[0] : '';data = _args.length > 1 && _args[1] !== undefined ? _args[1] : {};_context.next = 4;return (
+              app.$u.get(url, data));case 4:return _context.abrupt("return", _context.sent);case 5:case "end":return _context.stop();}}}, _callee);}));return _get.apply(this, arguments);}function
+
+post() {return _post.apply(this, arguments);}
+
+
+
+// // http接口API集中管理引入部分
+// import httpApi from '@/common/http.api.js'
+// Vue.use(httpApi, app)
+function _post() {_post = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var url,data,_args2 = arguments;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:url = _args2.length > 0 && _args2[0] !== undefined ? _args2[0] : '';data = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : {};_context2.next = 4;return app.$u.post(url, data);case 4:return _context2.abrupt("return", _context2.sent);case 5:case "end":return _context2.stop();}}}, _callee2);}));return _post.apply(this, arguments);}
 createApp(app).$mount();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createApp"]))
 

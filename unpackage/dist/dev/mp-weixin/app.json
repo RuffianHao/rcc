@@ -11,16 +11,14 @@
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "日查查",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarBackgroundColor": "#F9F9F9",
+    "backgroundColor": "#F9F9F9"
   },
   "tabBar": {
-    "iconWidth": "22px",
     "color": "#CBCBCC",
     "selectedColor": "#02D4D3",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
-    "fontSize": "14px",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -55,6 +53,7 @@
     ]
   },
   "permission": {},
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {
+    "custom-tabbar": "/components/tabbar/tabbar"
+  }
 }

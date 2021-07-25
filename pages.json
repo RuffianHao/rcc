@@ -2,9 +2,6 @@
 	"easycom": {
 		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 	},
-	"globalStyle":{
-		"backgroundColor":"#f9f9f9"
-	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 
 		{
@@ -41,7 +38,8 @@
 			"path": "pages/mine/mine",
 			"style": {
 				"navigationBarTitleText": "我的",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"navigationStyle":"custom"
 			}
 
 		},
@@ -58,16 +56,14 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "日查查",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#F9F9F9",
+		"backgroundColor": "#F9F9F9"
 	},
 	"tabBar": {
-		"iconWidth": "22px",
 		"color": "#CBCBCC",
 		"selectedColor": "#02D4D3",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
-		"fontSize": "14px",
 		"list": [{
 			"pagePath": "pages/index/index",
 			"iconPath": "static/resources/tabbar/home1.png",
