@@ -37,9 +37,7 @@
 </template>
 
 <script>
-	import {
-		getRotationChartList
-	} from '@/api/swiper.js'
+
 	export default {
 		data() {
 			return {
@@ -47,15 +45,7 @@
 			}
 		},
 		async onLoad() {
-			var query = {
-				topicType: 0,
-				chartType: 28,
-				status: 0,
-				chartTitle: '',
-			}
 
-			const list = await getRotationChartList(query)
-			console.log(list)
 		},
 
 		methods: {

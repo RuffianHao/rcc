@@ -88,7 +88,7 @@
 
 <script>
 import SearchSwiper from '@/components/search-swiper/search-swiper.vue';
-
+import {getSwiperList} from '@/api/swiper.js'
 export default {
 	components: {
 		SearchSwiper,
@@ -128,7 +128,7 @@ export default {
 					title: '招生信息'
 				}
 			],
-			swiperList: [
+			swiperList: [ 
 				{
 					image: '/static/resources/banner/banner1.png',
 					title: '昨夜星辰昨夜风，画楼西畔桂堂东'
@@ -177,10 +177,16 @@ export default {
 		};
 	},
 	onLoad() {
-		
+		this.getSwiperList()
 	},
 
 	methods: {
+		async getSwiperList(){
+			const {data} = await getSwiperList()
+			this.swiperList= data
+			console.log(data)
+		},
+					
 		handleClick() {
 			this.$u.route('/pages/HM-search/HM-search');
 		},

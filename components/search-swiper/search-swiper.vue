@@ -34,9 +34,9 @@
 			return {
 				search_value: '',
 				searchStyle: {
-					top: '20px',
+					top: '40rpx',
 					width: '100%',
-					padding: '0 20px'
+					padding: '0 40rpx'
 				}
 
 			};

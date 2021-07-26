@@ -6,7 +6,7 @@
 const install = (Vue, vm) => {
 	// 此为自定义配置参数，具体参数见上方说明
 	Vue.prototype.$u.http.setConfig({
-		baseUrl: 'https://api.japanstudyc.com/api',
+		baseUrl: 'http://localhost:3000',
 		loadingText: '努力加载中~',
 		loadingTime: 800,
 		// 设置自定义头部content-type
@@ -43,11 +43,11 @@ const install = (Vue, vm) => {
 		}
 		// 响应拦截，如配置，每次请求结束都会执行本方法
 			Vue.prototype.$u.http.interceptor.response = (res) => {
-				if(res.code == 0) {
+				if(res.code == 0) {    
 					// res为服务端返回值，可能有code，result等字段
 					// 这里对res.result进行返回，将会在this.$u.post(url).then(res => {})的then回调中的res的到
 					// 如果配置了originalData为true，请留意这里的返回值
-					return res.data;
+					return res;
 				} else if(res.code == 201) {
 					// 假设201为token失效，这里跳转登录
 					vm.$u.toast('验证失败，请重新登录');

@@ -1,4 +1,4 @@
 import {get,post} from '../main.js'
-export async function getRotationChartList(data) {
-	return await get('/rotationChart/getRotationChartList', data)
+export async function getSwiperList(data) {
+	return await get('/resources/getSwiperList', data)
 }
