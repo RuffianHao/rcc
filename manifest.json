@@ -56,7 +56,14 @@
             "es6" : false
         },
         "usingComponents" : true,
-        "permission" : {}
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "一旦授权，我就会监听你的位置！"
+            }
+        },
+        "uniStatistics" : {
+            "enable" : false
+        }
     },
     "mp-alipay" : {
         "usingComponents" : true

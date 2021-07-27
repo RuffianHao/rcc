@@ -52,7 +52,14 @@
       }
     ]
   },
-  "permission": {},
+  "permission": {
+    "scope.userLocation": {
+      "desc": "一旦授权，我就会监听你的位置！"
+    }
+  },
+  "uniStatistics": {
+    "enable": false
+  },
   "usingComponents": {
     "custom-tabbar": "/components/tabbar/tabbar"
   }

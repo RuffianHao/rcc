@@ -30,7 +30,19 @@
 			></u-tabs>
 			<!-- 大学热搜榜 -->
 			<view class="scroll-box" v-if="tabsCurrent == 0">
-				<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="0">
+				<scroll-view class="scroll-view_H" scroll-x="true"  scroll-left="0">
+					<view v-for="(item, index) in topCollegeSearchesList" :key="index" class="scroll-view-item_H uni-bg-red">
+						<view class="img-wrap">
+							<u-image width="100%" height="100%" :src="item.src"><view slot="error" style="font-size: 24rpx;">加载失败</view></u-image>
+						</view>
+						<view class="cn_name overflow_text">{{ item.cn_name }}</view>
+						<view class="en_name">{{ item.en_name }}</view>
+					</view>
+				</scroll-view>
+			</view>
+			<!-- 专业热搜榜 -->
+			<view class="scroll-box" v-if="tabsCurrent == 1">
+				<scroll-view class="scroll-view_H" scroll-x="true"  scroll-left="0">
 					<view v-for="(item, index) in topCollegeSearchesList" :key="index" class="scroll-view-item_H uni-bg-red">
 						<view class="img-wrap">
 							<u-image width="100%" height="100%" :src="item.src"><view slot="error" style="font-size: 24rpx;">加载失败</view></u-image>
@@ -52,24 +64,24 @@
 			title="特色专业"
 		>
 			<view class="" slot="body">
-				<view class="u-body-item  u-border-bottom u-col-between u-p-t-0">
+				<view hover-class="u-hover-class" v-for="item in specialtyList" :key="item.id" class="u-body-item  u-border-bottom u-col-between u-p-t-0">
 					<view class="u-flex">
-						<view class="u-body-item-title u-line-2">瓶身描绘的牡丹一如你初妆，冉冉檀香透过窗心事我了然，宣纸上走笔至此搁一半</view>
-						<image src="https://img11.360buyimg.com/n7/jfs/t1/94448/29/2734/524808/5dd4cc16E990dfb6b/59c256f85a8c3757.jpg" mode="aspectFill"></image>
+						<view class="u-body-item-title u-line-2">{{item.title}}</view>
+						<image :src="item.image" mode="aspectFill"></image>
 					</view>
 
 					<view class="card-icon">
 						<view class="card-icon-item">
 							<u-icon name="eye icon"></u-icon>
-							234234
+							{{item.watch_num}} 
 						</view>
 						<view class="card-icon-item">
 							<u-icon name="star icon"></u-icon>
-							23423
+							{{item.start_num}}
 						</view>
 						<view class="card-icon-item">
 							<u-icon name="clock icon"></u-icon>
-							2021年7月20日 
+							{{item.date_time}}
 						</view>
 					</view>
 				</view>
@@ -174,10 +186,42 @@ export default {
 					en_name: 'Dongda'
 				}
 			]
+			,specialtyList:[{
+				id:1,
+				title:'瓶身描绘的牡丹一如你初妆，冉冉檀香透过窗心事我了然，宣纸上走笔至此搁一半',
+				image:'https://img11.360buyimg.com/n7/jfs/t1/94448/29/2734/524808/5dd4cc16E990dfb6b/59c256f85a8c3757.jpg',
+				watch_num:234234,
+				start_num:23423,
+				date_time:'2021年7月20日'
+			},
+			{
+				id:1,
+				title:'瓶身描绘的牡丹一如你初妆，冉冉檀香透过窗心事我了然，宣纸上走笔至此搁一半',
+				image:'https://img11.360buyimg.com/n7/jfs/t1/94448/29/2734/524808/5dd4cc16E990dfb6b/59c256f85a8c3757.jpg',
+				watch_num:234234,
+				start_num:23423,
+				date_time:'2021年7月20日'
+			},
+			{
+				id:1,
+				title:'瓶身描绘的牡丹一如你初妆，冉冉檀香透过窗心事我了然，宣纸上走笔至此搁一半',
+				image:'https://img11.360buyimg.com/n7/jfs/t1/94448/29/2734/524808/5dd4cc16E990dfb6b/59c256f85a8c3757.jpg',
+				watch_num:234234,
+				start_num:23423,
+				date_time:'2021年7月20日'
+			}]
 		};
 	},
 	onLoad() {
-		this.getSwiperList()
+		// this.getSwiperList()
+	
+	uni.getLocation({
+	    type: 'wgs84',
+	    success: function (res) {
+	        console.log('当前位置的经度：' + res.longitude);
+	        console.log('当前位置的纬度：' + res.latitude);
+	    }
+	});
 	},
 
 	methods: {
@@ -193,27 +237,6 @@ export default {
 		//tabs 切换
 		tabsChange(val) {
 			this.tabsCurrent = val;
-		},
-		// scroll
-		upper: function(e) {
-			console.log(e);
-		},
-		lower: function(e) {
-			console.log(e);
-		},
-		scroll: function(e) {
-			console.log(e);
-			this.old.scrollTop = e.detail.scrollTop;
-		},
-		goTop: function(e) {
-			this.scrollTop = this.old.scrollTop;
-			this.$nextTick(function() {
-				this.scrollTop = 0;
-			});
-			uni.showToast({
-				icon: 'none',
-				title: '纵向滚动 scrollTop 值已被修改为 0'
-			});
 		}
 	}
 };
